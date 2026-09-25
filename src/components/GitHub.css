@@ -1,0 +1,251 @@
+/* GitHub / Terminal Section CSS */
+.terminal-wrapper {
+  max-width: 1040px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  background: #070B10;
+  border: 1px solid rgba(0, 245, 212, 0.2);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 245, 212, 0.1);
+  overflow: hidden;
+}
+
+/* Terminal Header */
+.terminal-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background: #0A1017;
+  border-bottom: 1px solid rgba(0, 245, 212, 0.12);
+}
+
+.terminal-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dot-red { background: #FF5F56; }
+.dot-yellow { background: #FFBD2E; }
+.dot-green { background: #27C93F; }
+
+.terminal-title {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.terminal-actions-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Terminal Body */
+.terminal-body {
+  padding: 30px;
+  font-family: var(--font-mono);
+}
+
+.terminal-command-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.terminal-prompt-user {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.terminal-prompt-dir {
+  color: var(--color-secondary);
+}
+
+.terminal-prompt-symbol {
+  color: #FFFFFF;
+}
+
+.terminal-command-text {
+  color: #F5F7FA;
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  background: var(--color-primary);
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Contribution Graph */
+.contribution-card {
+  padding: 24px;
+  border-radius: var(--radius-md);
+  background: rgba(11, 17, 23, 0.85);
+  border: 1px solid rgba(0, 245, 212, 0.15);
+  margin-bottom: 30px;
+}
+
+.contribution-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.contribution-stats-title {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.contribution-legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+}
+
+.legend-box {
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+}
+
+.contrib-matrix {
+  display: flex;
+  gap: 5px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.contrib-col {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.contrib-cell {
+  width: 13px;
+  height: 13px;
+  border-radius: 3px;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.contrib-cell:hover {
+  transform: scale(1.3);
+  box-shadow: 0 0 8px var(--color-primary);
+}
+
+.lvl-0 { background: rgba(255, 255, 255, 0.05); }
+.lvl-1 { background: rgba(0, 245, 212, 0.25); }
+.lvl-2 { background: rgba(0, 245, 212, 0.5); }
+.lvl-3 { background: rgba(0, 245, 212, 0.75); }
+.lvl-4 { background: #00F5D4; box-shadow: 0 0 6px rgba(0, 245, 212, 0.8); }
+
+/* Repositories in Terminal */
+.repo-grid-terminal {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.terminal-repo-card {
+  padding: 20px;
+  border-radius: var(--radius-sm);
+  background: rgba(11, 17, 23, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.terminal-repo-card:hover {
+  border-color: var(--color-primary);
+  background: rgba(0, 245, 212, 0.04);
+  transform: translateY(-3px);
+}
+
+.repo-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.repo-card-name {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.repo-visibility {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-text-dim);
+}
+
+.repo-card-desc {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.repo-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+}
+
+.repo-meta-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.repo-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@media (max-width: 768px) {
+  .repo-grid-terminal {
+    grid-template-columns: 1fr;
+  }
+  .terminal-body {
+    padding: 18px;
+  }
+}
